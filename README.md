@@ -31,7 +31,7 @@ $ sbt test
 
 #### Examples
 
-Using `Glob` asynchronously via callbacks
+##### Using `Glob` asynchronously via callbacks:
 
 ```scala
 import io.scalajs.JSON
@@ -42,7 +42,7 @@ Glob("**/*.scala", (err, files) => {
 })
 ```
 
-Using `Glob` asynchronously via promises
+##### Using `Glob` asynchronously via promises:
 
 ```scala
 import io.scalajs.JSON
@@ -54,7 +54,7 @@ Glob.async("**/*.scala").future foreach { files =>
 }
 ```
 
-Using `Glob` synchronously
+##### Using `Glob` synchronously:
 
 ```scala
 import io.scalajs.JSON
@@ -62,6 +62,28 @@ import io.scalajs.npm.glob._
 
 val files = Glob.sync("**/*.scala", new GlobOptions())
 println(s"files: ${JSON.stringify(files)}")
+```
+
+##### Using `Glob` as an instance:
+
+```scala
+import io.scalajs.JSON
+import io.scalajs.npm.glob._
+
+new Glob("**/*.scala", (err, files) => {
+    println(s"files: ${JSON.stringify(files)}")
+})
+```
+
+##### The output from all of the examples is identical:
+
+```text
+[
+    "src/main/scala/io/scalajs/npm/glob/Glob.scala",
+    "src/main/scala/io/scalajs/npm/glob/GlobOptions.scala",
+    "src/main/scala/io/scalajs/npm/glob/package.scala",
+    "src/test/scala/io/scalajs/npm/glob/GlobTest.scala"
+]
 ```
 
 #### Artifacts and Resolvers
