@@ -13,12 +13,25 @@ import scala.scalajs.js.|
   * @param pattern  the pattern to search for
   * @param options  the optional [[GlobOptions settings]]
   * @param callback the optional callback
+  * @example {{{ new glob.Glob(pattern, [options], [cb]) }}}
   */
 @js.native
 @JSImport("glob", "Glob")
-class Glob(val pattern: String,
-           val options: GlobOptions = js.native,
-           callback: GlobCallback = js.native) extends EventEmitter {
+class Glob(val pattern: String, val options: GlobOptions, callback: GlobCallback) extends EventEmitter {
+
+  /////////////////////////////////////////////////////////////////////////////////
+  //      Constructors
+  /////////////////////////////////////////////////////////////////////////////////
+
+  def this(pattern: String) = this(pattern, js.native, js.native)
+
+  def this(pattern: String, options: GlobOptions) = this(pattern, options, js.native)
+
+  def this(pattern: String, callback: GlobCallback) = this(pattern, js.native, callback)
+
+  /////////////////////////////////////////////////////////////////////////////////
+  //      Properties
+  /////////////////////////////////////////////////////////////////////////////////
 
   /**
     * The minimatch object that the glob uses.
@@ -45,6 +58,11 @@ class Glob(val pattern: String,
   var cache: js.Any = js.native // Boolean | String | js.Array[String] = js.native
 
   /**
+    * The filenames found matching the pattern
+    */
+  def found: js.Array[String] = js.native
+
+  /**
     * Cache of fs.stat results, to prevent statting the same path multiple times.
     */
   var statCache: Stats = js.native
@@ -59,6 +77,25 @@ class Glob(val pattern: String,
     * It is stored on the instantiated Glob object, and may be re-used.
     */
   var realpathCache: js.Any = js.native
+
+  /////////////////////////////////////////////////////////////////////////////////
+  //      Methods
+  /////////////////////////////////////////////////////////////////////////////////
+
+  /**
+    * Stop the search forever
+    */
+  def abort(): Unit = js.native
+
+  /**
+    * Temporarily stop the search
+    */
+  def pause(): Unit = js.native
+
+  /**
+    * Resume the search
+    */
+  def resume(): Unit = js.native
 
 }
 

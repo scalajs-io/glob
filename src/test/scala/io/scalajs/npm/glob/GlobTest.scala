@@ -49,7 +49,11 @@ class GlobTest extends FunSpec {
     }
 
     it("supports instantiated execution") {
-      val glob = new Glob("**/*.js")
+      val glob = new Glob("**/*.scala", (err, files) => {
+        info(s"instantiated: files = ${JSON.stringify(files)}")
+        Assert.deepEqual(files, expected)
+      })
+      //info(s"found = ${JSON.stringify(glob.found)}")
       //info(s"aborted:       ${JSON.stringify(glob.aborted)}")
       //info(s"cache:         ${glob.cache}")
       info(s"minimatch:     ${JSON.stringify(glob.minimatch)}")
