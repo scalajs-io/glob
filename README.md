@@ -78,12 +78,8 @@ new Glob("**/*.scala", (err, files) => {
 ##### The output from all of the examples is identical:
 
 ```text
-[
-    "src/main/scala/io/scalajs/npm/glob/Glob.scala",
-    "src/main/scala/io/scalajs/npm/glob/GlobOptions.scala",
-    "src/main/scala/io/scalajs/npm/glob/package.scala",
-    "src/test/scala/io/scalajs/npm/glob/GlobTest.scala"
-]
+files: ["src/main/scala/io/scalajs/npm/glob/Glob.scala","src/main/scala/io/scalajs/npm/glob/GlobOptions.scala",
+"src/main/scala/io/scalajs/npm/glob/package.scala","src/test/scala/io/scalajs/npm/glob/GlobTest.scala"]
 ```
 
 #### Artifacts and Resolvers
