@@ -1,6 +1,6 @@
 package io.scalajs.npm
 
-import io.scalajs.util.ScalaJsHelper._
+import io.scalajs.util.PromiseHelper._
 import io.scalajs.RawOptions
 
 import scala.concurrent.Promise
@@ -25,7 +25,7 @@ package object glob {
 
     @inline
     def async(pattern: String, options: GlobOptions | RawOptions = null): Promise[Array[String]] = {
-      futureCallbackE1[GlobError, js.Array[String]](glob(pattern, options, _))
+      promiseWithError1[GlobError, js.Array[String]](glob(pattern, options, _))
     }
 
   }

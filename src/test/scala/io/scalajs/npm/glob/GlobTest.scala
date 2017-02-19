@@ -2,7 +2,7 @@ package io.scalajs.npm.glob
 
 import io.scalajs.JSON
 import io.scalajs.nodejs.Assert
-import io.scalajs.util.ScalaJsHelper._
+import io.scalajs.util.PromiseHelper._
 import org.scalatest.FunSpec
 
 import scala.scalajs.concurrent.JSExecutionContext.Implicits.queue
