@@ -1,6 +1,6 @@
 {
   "name": "glob-scalajs",
-  "version": "7.1.1-3",
+  "version": "7.1.1-4",
   "private": true,
   "dependencies": {
     "glob": "^7.1.1",
