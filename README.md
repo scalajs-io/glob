@@ -86,7 +86,7 @@ files: ["src/main/scala/io/scalajs/npm/glob/Glob.scala","src/main/scala/io/scala
 To add the `Glob` binding to your project, add the following to your build.sbt:  
 
 ```sbt
-libraryDependencies += "io.scalajs.npm" %%% "glob" % "7.1.1-4"
+libraryDependencies += "io.scalajs.npm" %%% "glob" % "0.4.0-pre1"
 ```
 
 Optionally, you may add the Sonatype Repository resolver:
