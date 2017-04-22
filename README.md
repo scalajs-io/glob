@@ -48,7 +48,7 @@ import io.scalajs.JSON
 import io.scalajs.npm.glob._
 import scalajs.concurrent.JSExecutionContext.Implicits.queue
 
-Glob.async("**/*.scala").future foreach { files =>
+Glob.future("**/*.scala") foreach { files =>
   println(s"files: ${JSON.stringify(files)}")
 }
 ```
@@ -86,7 +86,7 @@ files: ["src/main/scala/io/scalajs/npm/glob/Glob.scala","src/main/scala/io/scala
 To add the `Glob` binding to your project, add the following to your build.sbt:  
 
 ```sbt
-libraryDependencies += "io.scalajs.npm" %%% "glob" % "0.4.0-pre4"
+libraryDependencies += "io.scalajs.npm" %%% "glob" % "0.4.0-pre5"
 ```
 
 Optionally, you may add the Sonatype Repository resolver:

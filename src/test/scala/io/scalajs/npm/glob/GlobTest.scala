@@ -2,7 +2,7 @@ package io.scalajs.npm.glob
 
 import io.scalajs.JSON
 import io.scalajs.nodejs.Assert
-import io.scalajs.util.PromiseHelper._
+import io.scalajs.util.ScalaJsHelper._
 import org.scalatest.FunSpec
 
 import scala.scalajs.concurrent.JSExecutionContext.Implicits.queue
@@ -33,7 +33,7 @@ class GlobTest extends FunSpec {
     }
 
     it("supports asynchronous execution via promises") {
-      Glob.async("**/*.scala").future onComplete {
+      Glob.future("**/*.scala") onComplete {
         case Success(files) =>
           info(s"promise: ${JSON.stringify(files)}")
           Assert.deepEqual(files, expected)
