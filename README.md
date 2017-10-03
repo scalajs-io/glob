@@ -6,7 +6,7 @@ A little globber.
 
 #### Build Dependencies
 
-* [SBT v0.13.13](http://www.scala-sbt.org/download.html)
+* [SBT v0.13.16](http://www.scala-sbt.org/download.html)
 
 #### Build/publish the SDK locally
 
@@ -86,7 +86,7 @@ files: ["src/main/scala/io/scalajs/npm/glob/Glob.scala","src/main/scala/io/scala
 To add the `Glob` binding to your project, add the following to your build.sbt:  
 
 ```sbt
-libraryDependencies += "io.scalajs.npm" %%% "glob" % "0.4.0"
+libraryDependencies += "io.scalajs.npm" %%% "glob" % "0.4.1"
 ```
 
 Optionally, you may add the Sonatype Repository resolver:
