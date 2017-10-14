@@ -1,7 +1,7 @@
 package io.scalajs.npm.glob
 
 import scala.scalajs.js
-import scala.scalajs.js.annotation.ScalaJSDefined
+
 import scala.scalajs.js.|
 
 /**
@@ -57,7 +57,6 @@ import scala.scalajs.js.|
   *                   affects the values returned in the match event.
   * @author lawrence.daniels@gmail.com
   */
-@ScalaJSDefined
 class GlobOptions(val cwd: js.UndefOr[String] = js.undefined,
                   val root: js.UndefOr[String] = js.undefined,
                   val dot: js.UndefOr[Boolean] = js.undefined,
